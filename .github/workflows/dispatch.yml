@@ -1,0 +1,15 @@
+name: workflow-dispatch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hoge:
+    runs-on: unbuntsu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: run echo
+        run: echo 'sex'
+
