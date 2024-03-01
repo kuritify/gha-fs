@@ -1,0 +1,11 @@
+name: simple
+on:
+  workflow_dispatch:
+
+jobs:
+  simple:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run-echo
+        run: echo 'sex'
+

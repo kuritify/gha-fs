@@ -5,7 +5,7 @@ on:
 
 jobs:
   hoge:
-    runs-on: unbuntsu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
