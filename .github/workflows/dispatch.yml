@@ -2,7 +2,12 @@ name: workflow-dispatch
 
 on:
   workflow_dispatch:
-
+  inputs:
+    isBuildPdf:
+      descriptioon: 'wheter build pdf of not'
+      type: boolean
+      required: true
+      default: false
 jobs:
   hoge:
     runs-on: ubuntu-latest
@@ -10,6 +15,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: run echo
-        run: echo 'sex'
+
+      - name: debug isBuildPdf
+        run: |
+          echo "${{ inputs.isBuildPdf }}"
+          echo "${{ github.events.inpts.isBuildPdf }}"
+      - name: if ture
+        if: ${{ inputs.isBuildPdf }}
+        run: echo 'true'
+
+      - name: if else
+        if: ${{ ! inputs.isBuildPdf }}
+        run: echo 'false'
+
+
 
