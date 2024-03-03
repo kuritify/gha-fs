@@ -32,8 +32,10 @@ jobs:
         if: inputs.isBuildPdf
         run: echo 'true'
 
-      - name: if else 2
-        if: ! inputs.isBuildPdf
-        run: echo 'false'
+   # ! inputs.isBuildPdfはexpressionではない
+   # The workflow is not valid. .github/workflows/dispatch.yml: (Line: 36, Col: 13, Idx: 753) - (Line: 36, Col: 14, Idx: 754): While parsing a tag, did not find expected tag URI.
+   #   - name: if else 3
+   #     if: ! inputs.isBuildPdf
+   #     run: echo 'false'
 
 
