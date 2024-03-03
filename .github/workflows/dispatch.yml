@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       isBuildPdf:
-        descriptioon: 'wheter build pdf of not'
+        description: 'wheter build pdf of not'
         type: boolean
         required: true
         default: false
@@ -28,5 +28,12 @@ jobs:
         if: ${{ ! inputs.isBuildPdf }}
         run: echo 'false'
 
+      - name: if ture 2
+        if: inputs.isBuildPdf
+        run: echo 'true'
+
+      - name: if else 2
+        if: ! inputs.isBuildPdf
+        run: echo 'false'
 
 
